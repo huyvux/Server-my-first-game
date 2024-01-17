@@ -19,7 +19,7 @@ const playerSchema = new mongoose.Schema({
 const player = mongoose.model('player', playerSchema);
 
 // Đăng ký người dùng
-app.post('/register', upload.single('profileImage'), async (req, res) => {
+app.post('/register', async (req, res) => {
   const { playerName } = req.body;
 
   const existingUser = await User.findOne({ playerName });
